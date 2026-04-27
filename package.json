@@ -1,0 +1,21 @@
+{
+  "name": "wills-web-shop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Multi-site static SMB hosting on a single Express server.",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

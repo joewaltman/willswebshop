@@ -1,0 +1,491 @@
+/* =========================================================
+   Barbershop template — classic, slab + sans, oxblood/green/brass.
+   Customize per-client by overriding the CSS vars below.
+   ========================================================= */
+
+:root {
+  /* Brand color palette */
+  --color-primary:  #143d2c;   /* deep forest green */
+  --color-accent:   #7a1a1a;   /* oxblood */
+  --color-bg:       #f4ede0;   /* cream */
+  --color-text:     #1a1a1a;   /* near black */
+  --color-muted:    #6b6457;   /* warm taupe for secondary copy */
+
+  /* Typography */
+  --font-display:   "Roboto Slab", Georgia, "Times New Roman", serif;
+  --font-body:      "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Geometry */
+  --radius:         2px;        /* mostly square edges */
+  --max-width:      1120px;
+
+  /* Internal */
+  --brass:          #b8924a;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--color-accent); }
+a:hover { color: var(--color-primary); }
+
+/* ============== Rules / dividers ============== */
+.rule {
+  height: 1px;
+  background: var(--color-text);
+  opacity: 0.85;
+  margin: 0 auto;
+  max-width: var(--max-width);
+}
+.rule--double {
+  height: 7px;
+  background:
+    linear-gradient(var(--color-text), var(--color-text)) top/100% 1px no-repeat,
+    linear-gradient(var(--color-text), var(--color-text)) bottom/100% 1px no-repeat;
+  opacity: 0.85;
+}
+
+/* ============== Masthead ============== */
+.masthead {
+  background: var(--color-bg);
+  border-bottom: 0;
+  padding: 22px 24px 14px;
+}
+.masthead__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px 32px;
+  align-items: end;
+}
+.brand {
+  grid-column: 1 / -1;
+  text-align: center;
+  line-height: 1.05;
+}
+.brand__est, .brand__year {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: var(--color-muted);
+}
+.brand__year { color: var(--brass); }
+.brand__name {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2.4rem, 7vw, 4.4rem);
+  letter-spacing: -0.01em;
+  margin: 4px 0 4px;
+  color: var(--color-primary);
+}
+.brand__tag {
+  font-family: var(--font-body);
+  font-style: italic;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+}
+.topnav {
+  grid-column: 1 / 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.topnav a {
+  color: var(--color-text);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+}
+.topnav a:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.cta {
+  grid-column: 2 / 3;
+  align-self: center;
+  background: var(--color-primary);
+  color: var(--color-bg);
+  text-decoration: none;
+  padding: 11px 18px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-primary);
+  transition: background 0.15s ease;
+}
+.cta:hover { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-bg); }
+
+@media (max-width: 720px) {
+  .topnav { display: none; }
+  .cta { grid-column: 1 / -1; justify-self: center; }
+}
+
+/* ============== Section heads / kickers ============== */
+.kicker {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin: 0 0 8px;
+}
+.section-head {
+  text-align: center;
+  padding: 56px 24px 16px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.section-h {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  letter-spacing: -0.01em;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+/* ============== Hero ============== */
+.hero {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 56px 24px 64px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.hero__copy .kicker { color: var(--color-accent); }
+.hero__headline {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2.6rem, 6.4vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin: 8px 0 18px;
+  color: var(--color-primary);
+}
+.hero__lead {
+  font-size: 1.15rem;
+  color: var(--color-muted);
+  max-width: 38ch;
+  margin: 0 0 28px;
+  font-style: italic;
+}
+.hero__actions { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn {
+  display: inline-block;
+  padding: 14px 22px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  text-decoration: none;
+  border: 1.5px solid var(--color-primary);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.btn--primary { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-bg); }
+.btn--primary:hover { background: var(--color-primary); border-color: var(--color-primary); color: var(--color-bg); }
+.btn--ghost { background: transparent; color: var(--color-primary); }
+.btn--ghost:hover { background: var(--color-primary); color: var(--color-bg); }
+
+.hero__mark {
+  border: 2px solid var(--color-primary);
+  padding: 32px 24px;
+  background:
+    repeating-linear-gradient(45deg, transparent 0 14px, rgba(20,61,44,0.04) 14px 15px);
+  text-align: center;
+  position: relative;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+}
+.hero__mark::before, .hero__mark::after {
+  content: "";
+  position: absolute;
+  border: 1px solid var(--brass);
+  inset: 8px;
+  pointer-events: none;
+}
+.hero__mark::after {
+  inset: 16px;
+  border-color: var(--color-primary);
+  opacity: 0.4;
+}
+.hero__mark-inner { display: grid; gap: 8px; }
+.hero__mark-line {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+.hero__mark-big {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 10vw, 6rem);
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+@media (max-width: 820px) {
+  .hero { grid-template-columns: 1fr; gap: 32px; padding: 40px 24px; }
+  .hero__mark { aspect-ratio: 1.6 / 1; }
+}
+
+/* ============== Services ============== */
+.services {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 24px 64px;
+}
+.services__table {
+  border-top: 1px solid var(--color-text);
+}
+/* SERVICES_BLOCK injects rows like:
+   <div class="row"><span class="row__name">Haircut</span>
+     <span class="row__dots"></span>
+     <span class="row__price">$35</span></div>
+*/
+.services__table .row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: baseline;
+  gap: 12px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(26,26,26,0.18);
+}
+.services__table .row__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--color-primary);
+}
+.services__table .row__dots {
+  border-bottom: 2px dotted rgba(26,26,26,0.3);
+  transform: translateY(-4px);
+}
+.services__table .row__price {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--color-accent);
+}
+.services__table .row__desc {
+  grid-column: 1 / -1;
+  margin: 4px 0 0;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+.services__note {
+  text-align: center;
+  margin-top: 24px;
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+/* ============== Barbers ============== */
+.barbers { padding: 0 24px 64px; max-width: var(--max-width); margin: 0 auto; }
+.barbers__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+/* STAFF_BLOCK injects:
+  <article class="barber"><img src="images/staff-1.jpg" alt="..." />
+   <h3>Name</h3><p class="barber__role">Title</p><p>Bio</p></article>
+*/
+.barber {
+  text-align: center;
+  border: 1px solid rgba(26,26,26,0.15);
+  background: rgba(255,255,255,0.4);
+  padding: 24px 20px;
+}
+.barber img {
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 16px;
+  border: 3px solid var(--brass);
+}
+.barber h3 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.4rem;
+  color: var(--color-primary);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.barber__role {
+  font-family: var(--font-display);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--color-accent);
+  margin: 4px 0 12px;
+}
+.barber p:last-child { color: var(--color-muted); margin: 0; }
+@media (max-width: 800px) {
+  .barbers__grid { grid-template-columns: 1fr; gap: 20px; }
+}
+
+/* ============== Gallery ============== */
+.gallery { padding: 0 24px 64px; max-width: var(--max-width); margin: 0 auto; }
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.gallery__grid figure { margin: 0; aspect-ratio: 4/3; overflow: hidden; }
+.gallery__grid img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: saturate(0.85) contrast(1.05);
+  transition: transform 0.5s ease;
+}
+.gallery__grid figure:hover img { transform: scale(1.04); }
+@media (max-width: 700px) {
+  .gallery__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ============== Visit / map ============== */
+.visit { padding: 0 24px 80px; max-width: var(--max-width); margin: 0 auto; }
+.visit__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+}
+.visit__sub {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin: 0 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--brass);
+  display: inline-block;
+}
+.visit__col { font-size: 1rem; }
+.visit__col + .visit__sub { margin-top: 24px; }
+.hours { margin-bottom: 24px; }
+.hours table { width: 100%; border-collapse: collapse; }
+.hours th, .hours td {
+  text-align: left;
+  padding: 6px 0;
+  border-bottom: 1px dotted rgba(26,26,26,0.2);
+  font-size: 0.95rem;
+}
+.hours th {
+  font-family: var(--font-display);
+  font-weight: 700;
+  width: 9rem;
+  color: var(--color-primary);
+}
+.hours td { color: var(--color-muted); }
+address { font-style: normal; color: var(--color-text); margin-bottom: 16px; }
+.visit__social { font-family: var(--font-display); letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.85rem; }
+.visit__map iframe {
+  width: 100%; height: 100%;
+  min-height: 360px;
+  border: 2px solid var(--color-primary);
+  filter: grayscale(0.4);
+}
+@media (max-width: 800px) {
+  .visit__grid { grid-template-columns: 1fr; }
+  .visit__map iframe { min-height: 280px; }
+}
+
+/* ============== Footer ============== */
+.foot { background: var(--color-primary); color: var(--color-bg); margin-top: 24px; }
+.foot .rule--double { background:
+    linear-gradient(var(--brass), var(--brass)) top/100% 1px no-repeat,
+    linear-gradient(var(--brass), var(--brass)) bottom/100% 1px no-repeat;
+  opacity: 1;
+}
+.foot__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 36px 24px;
+  text-align: center;
+}
+.foot__name {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.6rem;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px;
+}
+.foot__small { margin: 0 0 12px; font-size: 0.95rem; opacity: 0.85; }
+.foot a { color: var(--brass); }
+.foot a:hover { color: var(--color-bg); }
+.foot__copy { margin: 0; opacity: 0.6; font-size: 0.8rem; letter-spacing: 0.06em; }
+
+/* =========================================================
+   Site-specific overrides — Encinitas Barber Shop.
+   Distinctive moves:
+   - Two-up barbers grid (Raul + Matt only).
+   - Monogram circle replacing staff photos.
+   - Slightly tightened display tracking on the wordmark.
+   - "603" hero mark (the address, used as a typographic mark).
+   ========================================================= */
+
+.brand__name { letter-spacing: -0.01em; }
+
+/* Two-up barbers grid */
+.barbers__grid--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 760px;
+  margin: 0 auto;
+}
+@media (max-width: 700px) {
+  .barbers__grid--two { grid-template-columns: 1fr; }
+}
+
+/* Monogram circle (replaces .barber img) */
+.barber__monogram {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 3rem;
+  color: var(--brass);
+  background: var(--color-primary);
+  border: 3px solid var(--brass);
+  box-shadow: inset 0 0 0 6px var(--color-primary), inset 0 0 0 7px rgba(184, 146, 74, 0.4);
+}
+
+/* "603" hero mark — punch up the numeral, soften the rules above/below */
+.hero__mark-big {
+  font-size: clamp(4rem, 14vw, 8rem);
+  letter-spacing: -0.04em;
+  font-style: italic;
+}
+.hero__mark-line { font-size: 0.72rem; letter-spacing: 0.36em; }

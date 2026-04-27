@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{BUSINESS_NAME}} — {{TAGLINE}}</title>
+  <meta name="description" content="{{BUSINESS_NAME}} — {{TAGLINE}}">
+  <link rel="icon" href="/shared/favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{BUSINESS_NAME}}">
+  <meta property="og:description" content="{{TAGLINE}}">
+  <meta property="og:image" content="images/og.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar" role="banner">
+    <a class="logo" href="/">
+      <span class="logo__paw" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28">
+          <circle cx="9"  cy="10" r="3.2" fill="currentColor"/>
+          <circle cx="16" cy="7"  r="3.2" fill="currentColor"/>
+          <circle cx="23" cy="10" r="3.2" fill="currentColor"/>
+          <circle cx="6"  cy="17" r="2.6" fill="currentColor"/>
+          <circle cx="26" cy="17" r="2.6" fill="currentColor"/>
+          <path d="M16 13c-5.5 0-9 4.2-9 8.2 0 3 2.6 4.8 5 4.8 1.6 0 2.6-.8 4-.8s2.4.8 4 .8c2.4 0 5-1.8 5-4.8 0-4-3.5-8.2-9-8.2z" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="logo__text">{{BUSINESS_NAME}}</span>
+    </a>
+    <nav class="topbar__nav" aria-label="primary">
+      <a href="#services">Services</a>
+      <a href="#policy">Intake</a>
+      <a href="#gallery">Happy clients</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a class="btn btn--book" href="{{BOOKING_URL}}" rel="noopener">Book a bath</a>
+  </header>
+
+  <main>
+
+    <section class="hero" aria-label="Welcome">
+      <div class="hero__photo">
+        <img src="images/hero-pet.jpg" alt="A freshly-groomed dog smiling at the camera" width="900" height="900" fetchpriority="high">
+        <span class="hero__sticker hero__sticker--a" aria-hidden="true">since 2016</span>
+        <span class="hero__sticker hero__sticker--b" aria-hidden="true">★ ★ ★ ★ ★</span>
+      </div>
+      <div class="hero__copy">
+        <p class="kicker"><span class="underline">friendly grooming</span></p>
+        <h1 class="hero__h1">Spa days for the very <em>good</em> ones.</h1>
+        <p class="hero__lead">{{TAGLINE}}</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="{{BOOKING_URL}}" rel="noopener">Book online</a>
+          <a class="btn btn--ghost" href="tel:{{PHONE_TEL}}" aria-label="Call {{BUSINESS_NAME}} at {{PHONE}}">
+            <span aria-hidden="true">☎</span> {{PHONE}}
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="services" aria-labelledby="services-h">
+      <header class="section-head">
+        <p class="kicker"><span class="underline">prices</span></p>
+        <h2 id="services-h" class="section-h">Services &amp; size tiers</h2>
+        <p class="section-sub">Prices vary by coat condition. Final quote at intake.</p>
+      </header>
+      {{SERVICES_BLOCK}}
+    </section>
+
+    <section id="policy" class="policy" aria-labelledby="policy-h">
+      <div class="policy__inner">
+        <header class="section-head section-head--left">
+          <p class="kicker"><span class="underline">good to know</span></p>
+          <h2 id="policy-h" class="section-h">Vaccination &amp; intake policy</h2>
+        </header>
+        <div class="policy__cards">
+          <article class="policy__card">
+            <h3>Up-to-date shots</h3>
+            <p>Bring proof of <strong>Rabies</strong> and <strong>Distemper/DHPP</strong> on first visit. Bordetella recommended for any boarding-style services.</p>
+          </article>
+          <article class="policy__card">
+            <h3>Friendly intake</h3>
+            <p>First-timer? We'll do a 10-minute meet-and-greet so your pet can sniff around before any clipper meets fur.</p>
+          </article>
+          <article class="policy__card">
+            <h3>Senior &amp; anxious pets</h3>
+            <p>Tell us up front. We slow the pace, take breaks, and skip anything stressful. No drying cages.</p>
+          </article>
+        </div>
+        <a class="btn btn--primary policy__cta" href="{{BOOKING_URL}}" rel="noopener">Start a first-time intake</a>
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery" aria-labelledby="gallery-h">
+      <header class="section-head">
+        <p class="kicker"><span class="underline">our happy clients</span></p>
+        <h2 id="gallery-h" class="section-h">Wags &amp; smiles</h2>
+      </header>
+      <div class="gallery__grid">
+        <figure><img src="images/pet-1.jpg" alt="A small terrier in a fresh trim" loading="lazy" width="600" height="600"></figure>
+        <figure><img src="images/pet-2.jpg" alt="A golden retriever post-bath" loading="lazy" width="600" height="600"></figure>
+        <figure><img src="images/pet-3.jpg" alt="A cat being gently brushed" loading="lazy" width="600" height="600"></figure>
+        <figure><img src="images/pet-4.jpg" alt="A poodle with a teddy-bear cut" loading="lazy" width="600" height="600"></figure>
+        <figure><img src="images/pet-5.jpg" alt="A schnauzer with a styled beard" loading="lazy" width="600" height="600"></figure>
+        <figure><img src="images/pet-6.jpg" alt="A bulldog wearing a bandana" loading="lazy" width="600" height="600"></figure>
+      </div>
+    </section>
+
+    <section id="visit" class="visit" aria-labelledby="visit-h">
+      <header class="section-head">
+        <p class="kicker"><span class="underline">find us</span></p>
+        <h2 id="visit-h" class="section-h">Come see us</h2>
+      </header>
+      <div class="visit__grid">
+        <div class="visit__col">
+          <h3 class="visit__sub">Hours</h3>
+          <div class="hours">
+            {{HOURS_TABLE}}
+          </div>
+          <h3 class="visit__sub">Address</h3>
+          <address>
+            {{ADDRESS}}<br>
+            <a href="tel:{{PHONE_TEL}}">{{PHONE}}</a>
+          </address>
+          <p class="visit__social">
+            <a href="{{INSTAGRAM_URL}}" rel="noopener">Instagram</a>
+            <span aria-hidden="true">·</span>
+            <a href="{{FACEBOOK_URL}}" rel="noopener">Facebook</a>
+          </p>
+        </div>
+        <div class="visit__map">
+          <iframe
+            src="{{MAP_EMBED_URL}}"
+            title="Map to {{BUSINESS_NAME}}"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot" role="contentinfo">
+    <div class="foot__inner">
+      <p class="foot__name">{{BUSINESS_NAME}}</p>
+      <p class="foot__small">{{ADDRESS}}<br><a href="tel:{{PHONE_TEL}}">{{PHONE}}</a></p>
+      <p class="foot__copy">© <span id="yr"></span> {{BUSINESS_NAME}}. All tails wagged.</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>South Carlsbad Salon — DRAFT</title>
+  <meta name="description" content="DRAFT site for South Carlsbad Salon. Address, phone, and hours pending verification.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/shared/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Roboto+Slab:wght@500;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/shared/css/draft-banner.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="draft-banner" role="alert">
+    <strong>DRAFT</strong> · No verifiable listing for "South Carlsbad Salon" found in public sources. Confirm exact business name with Joe.
+  </div>
+
+  <header class="masthead" role="banner">
+    <div class="masthead__inner">
+      <div class="brand">
+        <span class="brand__est">— Carlsbad, CA —</span>
+        <h1 class="brand__name">South Carlsbad Salon</h1>
+        <p class="brand__tag">Cuts and color near the coast.</p>
+      </div>
+      <nav class="topnav" aria-label="primary">
+        <a href="#services">Services</a>
+        <a href="#visit">Visit</a>
+      </nav>
+      <a class="cta" href="tel:+10000000000" aria-label="Call placeholder phone">(000) 000-0000</a>
+    </div>
+    <div class="rule rule--double" aria-hidden="true"></div>
+  </header>
+
+  <main>
+
+    <section class="hero" aria-label="Welcome">
+      <div class="hero__copy">
+        <p class="kicker">— Cuts · color · styling —</p>
+        <h2 class="hero__headline">A neighborhood salon<br>just south of the village.</h2>
+        <p class="hero__lead">Walk-ins welcome. Loyal regulars. Honest prices.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="tel:+10000000000">Call to book</a>
+          <a class="btn btn--ghost" href="#visit">Find the salon</a>
+        </div>
+      </div>
+      <div class="hero__mark" aria-hidden="true">
+        <div class="hero__mark-inner">
+          <span class="hero__mark-line">— South Carlsbad —</span>
+          <span class="hero__mark-big">★</span>
+          <span class="hero__mark-line">— California —</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="rule" aria-hidden="true"></div>
+
+    <section id="services" class="services" aria-labelledby="services-h">
+      <header class="section-head"><p class="kicker">— I —</p><h2 id="services-h" class="section-h">Services</h2></header>
+      <div class="services__table">
+        <div class="row"><span class="row__name">Haircut</span><span class="row__dots"></span><span class="row__price">Call</span></div>
+        <div class="row"><span class="row__name">Color</span><span class="row__dots"></span><span class="row__price">Call</span></div>
+        <div class="row"><span class="row__name">Highlights / balayage</span><span class="row__dots"></span><span class="row__price">Call</span></div>
+        <div class="row"><span class="row__name">Blowout</span><span class="row__dots"></span><span class="row__price">Call</span></div>
+      </div>
+      <p class="services__note">Pricing pending verification — call for current rates.</p>
+    </section>
+
+    <div class="rule" aria-hidden="true"></div>
+
+    <section id="visit" class="visit" aria-labelledby="visit-h">
+      <header class="section-head"><p class="kicker">— II —</p><h2 id="visit-h" class="section-h">Visit</h2></header>
+      <div class="visit__grid">
+        <div class="visit__col">
+          <h3 class="visit__sub">Hours</h3>
+          <div class="hours"><p><em>Hours pending verification.</em></p></div>
+          <h3 class="visit__sub">Find us</h3>
+          <address>
+            South Carlsbad, CA<br>
+            <em>(address pending verification)</em><br>
+            <a href="tel:+10000000000">(000) 000-0000</a>
+          </address>
+        </div>
+        <div class="visit__map">
+          <iframe
+            src="https://www.google.com/maps?q=South+Carlsbad,+CA&output=embed"
+            title="Generic South Carlsbad map (placeholder)"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot" role="contentinfo">
+    <div class="rule rule--double" aria-hidden="true"></div>
+    <div class="foot__inner">
+      <p class="foot__name">South Carlsbad Salon</p>
+      <p class="foot__small"><em>(address pending)</em> · <a href="tel:+10000000000">(000) 000-0000</a></p>
+      <p class="foot__copy">© <span id="yr"></span> South Carlsbad Salon. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

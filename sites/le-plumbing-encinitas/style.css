@@ -1,0 +1,518 @@
+/* =========================================================
+   Plumber template — trustworthy, no-nonsense, high-contrast.
+   Default palette: near-black + safety-orange + off-white.
+   System font stack on body for speed; condensed display via
+   Google Fonts, with system fallback before it loads.
+   ========================================================= */
+
+:root {
+  /* Brand color palette */
+  --color-primary:  #ff6b1a;   /* safety orange */
+  --color-accent:   #0f1115;   /* near-black */
+  --color-bg:       #f5f3ee;   /* off-white / paper */
+  --color-text:     #0f1115;   /* near-black body text */
+  --color-muted:    #5b6068;   /* warm grey */
+
+  /* Typography */
+  --font-display:   "Barlow Condensed", "Oswald", "Arial Narrow", "Helvetica Neue", sans-serif;
+  --font-body:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Geometry */
+  --radius:         4px;
+  --max-width:      1200px;
+
+  --stripe: repeating-linear-gradient(135deg,
+    var(--color-accent) 0 18px,
+    var(--color-primary) 18px 36px);
+}
+
+/* Load Barlow Condensed */
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800;900&display=swap");
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--color-primary); }
+a:hover { color: var(--color-accent); }
+
+/* ============== Sticky emergency banner ============== */
+.emergency {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #fff;
+  background: var(--color-accent);
+  border-bottom: 4px solid var(--color-primary);
+  position: -webkit-sticky;
+  /* diagonal stripe accent on the left */
+  background-image:
+    linear-gradient(90deg, var(--color-accent) 0, var(--color-accent) calc(100% - 220px), transparent calc(100% - 220px)),
+    var(--stripe);
+  background-size: auto, auto;
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+.emergency__label {
+  background: var(--color-primary);
+  color: var(--color-accent);
+  padding: 4px 10px;
+  font-size: 0.95rem;
+  border-radius: var(--radius);
+  white-space: nowrap;
+}
+.emergency__num {
+  font-size: clamp(1.3rem, 3.4vw, 2rem);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  margin-left: auto;
+}
+.emergency__chev {
+  font-size: 1.4rem;
+  animation: pulse 1.6s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { transform: translateX(0); opacity: 1; }
+  50%      { transform: translateX(6px); opacity: 0.6; }
+}
+.emergency:hover { background-color: #1a1d23; }
+
+@media (max-width: 600px) {
+  .emergency { padding: 10px 14px; gap: 10px; background-image: none; background: var(--color-accent); }
+  .emergency__num { font-size: 1.4rem; }
+}
+
+/* ============== Topbar ============== */
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 18px 28px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  background: var(--color-bg);
+  border-bottom: 1px solid rgba(15,17,21,0.08);
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.6rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.brand__icon { color: var(--color-primary); display: inline-flex; }
+.topnav {
+  margin-left: auto;
+  display: flex;
+  gap: 24px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.topnav a { color: var(--color-accent); text-decoration: none; }
+.topnav a:hover { color: var(--color-primary); }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: var(--radius);
+  border: 2px solid transparent;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn--call { background: var(--color-primary); color: var(--color-accent); border-color: var(--color-primary); }
+.btn--call:hover { background: var(--color-accent); color: var(--color-primary); border-color: var(--color-accent); }
+.btn--primary { background: var(--color-primary); color: var(--color-accent); border-color: var(--color-primary); }
+.btn--primary:hover { background: var(--color-accent); color: var(--color-primary); border-color: var(--color-accent); }
+.btn--ghost { background: transparent; color: var(--color-accent); border-color: var(--color-accent); }
+.btn--ghost:hover { background: var(--color-accent); color: var(--color-bg); }
+.btn--big {
+  padding: 14px 22px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+.btn__small {
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  opacity: 0.85;
+  font-weight: 700;
+}
+.btn__big {
+  font-size: clamp(1.5rem, 3.4vw, 2.2rem);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+@media (max-width: 760px) {
+  .topnav { display: none; }
+}
+
+/* ============== Section heads ============== */
+.kicker {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin: 0 0 12px;
+}
+.section-head { padding: 64px 28px 16px; max-width: var(--max-width); margin: 0 auto; }
+.section-h {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  text-transform: uppercase;
+  letter-spacing: -0.005em;
+  margin: 0;
+  line-height: 1;
+}
+
+/* ============== Hero ============== */
+.hero {
+  position: relative;
+  background: var(--color-bg);
+  padding: 56px 28px 72px;
+  border-bottom: 4px solid var(--color-accent);
+  overflow: hidden;
+}
+.hero__inner { max-width: var(--max-width); margin: 0 auto; position: relative; z-index: 2; }
+.hero__h1 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2.6rem, 7vw, 5.2rem);
+  text-transform: uppercase;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  margin: 8px 0 16px;
+  max-width: 18ch;
+}
+.hero__accent {
+  background: var(--color-primary);
+  color: var(--color-accent);
+  padding: 0 14px;
+  display: inline-block;
+  transform: skew(-6deg);
+}
+.hero__lead { font-size: 1.2rem; max-width: 56ch; margin: 0 0 20px; color: var(--color-muted); }
+.hero__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  display: grid;
+  gap: 8px;
+  font-weight: 600;
+  max-width: 60ch;
+}
+.hero__list li {
+  position: relative;
+  padding-left: 28px;
+}
+.hero__list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0; top: 0;
+  width: 20px; height: 20px;
+  background: var(--color-primary);
+  color: var(--color-accent);
+  display: grid;
+  place-items: center;
+  font-size: 0.85rem;
+  font-weight: 900;
+  border-radius: 50%;
+  margin-top: 3px;
+}
+.hero__actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.hero__stripe {
+  position: absolute;
+  inset: 0 -10% auto auto;
+  width: 30%;
+  height: 100%;
+  background: var(--stripe);
+  opacity: 0.08;
+  transform: skew(-12deg);
+  pointer-events: none;
+}
+
+/* ============== Services ============== */
+.services {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  padding: 0 0 72px;
+}
+.services .section-head { color: var(--color-bg); }
+.services .section-h { color: var(--color-bg); }
+.services__grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 28px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.svc {
+  background: var(--color-accent);
+  padding: 28px 26px;
+}
+.svc__num {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.4rem;
+  color: var(--color-primary);
+  letter-spacing: 0.04em;
+  margin-bottom: 14px;
+}
+.svc h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin: 0 0 8px;
+}
+.svc p { margin: 0; color: rgba(255,255,255,0.78); }
+
+@media (max-width: 880px) {
+  .services__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .services__grid { grid-template-columns: 1fr; }
+}
+
+/* ============== Service area ============== */
+.area { padding: 72px 28px; max-width: var(--max-width); margin: 0 auto; }
+.area__grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: stretch; }
+.area__copy .section-head { padding: 0 0 16px; }
+.area__copy p { color: var(--color-muted); margin: 0 0 14px; max-width: 56ch; }
+.area__copy .btn { margin-top: 8px; }
+.area__map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  border: 4px solid var(--color-accent);
+  border-radius: var(--radius);
+}
+@media (max-width: 800px) {
+  .area__grid { grid-template-columns: 1fr; }
+  .area__map iframe { min-height: 280px; }
+}
+
+/* ============== Why us ============== */
+.why { background: var(--color-bg); border-top: 4px solid var(--color-accent); padding: 0 0 72px; }
+.why__grid {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: var(--max-width);
+  padding: 0 28px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.why__grid li {
+  background: #fff;
+  border: 2px solid var(--color-accent);
+  padding: 24px 22px;
+  position: relative;
+}
+.why__grid li::before {
+  content: "";
+  position: absolute;
+  inset: -6px -6px auto auto;
+  width: 24px; height: 24px;
+  background: var(--color-primary);
+  border: 2px solid var(--color-accent);
+}
+.why__big {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+  margin-bottom: 6px;
+}
+.why__grid p { margin: 0; color: var(--color-text); font-size: 0.98rem; }
+.why__grid strong { font-family: var(--font-display); font-weight: 800; letter-spacing: 0.02em; }
+@media (max-width: 880px) { .why__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .why__grid { grid-template-columns: 1fr; } }
+
+/* ============== Reviews ============== */
+.reviews { padding: 0 0 72px; }
+.reviews__grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 28px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+/* {{REVIEW_BLOCK}} injects:
+  <article class="review">
+    <div class="review__stars" aria-label="5 out of 5">★★★★★</div>
+    <p>Paraphrased review text.</p>
+    <p class="review__by">— First name L., neighborhood</p>
+  </article>
+*/
+.review {
+  background: #fff;
+  border-left: 6px solid var(--color-primary);
+  padding: 24px 26px;
+  border-radius: var(--radius);
+  box-shadow: 0 12px 28px -22px rgba(15,17,21,0.3);
+}
+.review__stars { color: var(--color-primary); letter-spacing: 0.1em; font-size: 1.2rem; margin-bottom: 10px; }
+.review p { margin: 0 0 8px; }
+.review__by { font-family: var(--font-display); font-weight: 700; letter-spacing: 0.02em; color: var(--color-muted); margin: 0; }
+@media (max-width: 720px) { .reviews__grid { grid-template-columns: 1fr; } }
+
+/* ============== Footer ============== */
+.foot {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  border-top: 6px solid var(--color-primary);
+}
+.foot__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 56px 28px;
+  text-align: center;
+}
+.foot__name {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px;
+}
+.foot__phone {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2.4rem, 7vw, 4.4rem);
+  letter-spacing: 0.02em;
+  color: var(--color-primary);
+  text-decoration: none;
+  line-height: 1;
+  margin: 4px 0 12px;
+}
+.foot__phone:hover { color: var(--color-bg); }
+.foot__addr { font-style: normal; opacity: 0.85; margin: 0 0 16px; }
+.foot__hours {
+  display: inline-block;
+  text-align: left;
+  margin-bottom: 16px;
+}
+.foot__hours table { border-collapse: collapse; }
+.foot__hours th, .foot__hours td { padding: 4px 12px; font-size: 0.95rem; }
+.foot__hours th {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--color-primary);
+}
+.foot__lic {
+  font-size: 0.95rem;
+  margin: 0 0 10px;
+  opacity: 0.85;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.foot__copy { margin: 0; opacity: 0.55; font-size: 0.85rem; }
+
+/* =========================================================
+   Site-specific overrides — Le Plumbing Encinitas (DRAFT).
+   - Yellow draft banner at top of page (above sticky banner).
+   - Punchier orange + deeper near-black palette.
+   - Dashed-outlined placeholder review cards.
+   - Slightly amped pulse animation on the call button.
+   ========================================================= */
+
+:root {
+  --color-primary:  #ff6a00;   /* punchier safety-orange */
+  --color-text:     #0e1014;   /* deeper near-black */
+}
+
+/* DRAFT banner — caution-tape yellow, full-bleed, sits above sticky banner */
+.draft-banner {
+  background: #ffd60a;
+  color: #1a1a1a;
+  text-align: center;
+  padding: 10px 16px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  border-bottom: 3px solid #1a1a1a;
+}
+.draft-banner strong {
+  background: #1a1a1a;
+  color: #ffd60a;
+  padding: 2px 8px;
+  margin-right: 6px;
+  letter-spacing: 0.12em;
+}
+
+/* Placeholder review cards — dashed outline, muted */
+.review--placeholder {
+  border: 2px dashed rgba(0,0,0,0.25) !important;
+  background: rgba(255,214,10,0.06);
+}
+.review--placeholder .review__body {
+  font-style: italic;
+  opacity: 0.8;
+}
+.review--placeholder .review__name {
+  font-style: italic;
+  opacity: 0.6;
+}
+
+/* Slightly faster, more visible call-button pulse */
+.btn--call,
+.btn--primary {
+  animation: pulse-soft 2.4s ease-in-out infinite;
+}
+@keyframes pulse-soft {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 106, 0, 0.55); }
+  50%      { box-shadow: 0 0 0 12px rgba(255, 106, 0, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn--call, .btn--primary { animation: none; }
+}

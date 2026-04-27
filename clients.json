@@ -1,0 +1,204 @@
+{
+  "$schema_note": "One entry per client. `slug` matches sites/<slug>/. `template` is one of: barbershop, pet-grooming, plumber. `notes` is private — never copy verbatim into the rendered site.",
+  "clients": [
+    {
+      "slug": "encinitas-barber-shop",
+      "template": "barbershop",
+      "google_business_name": "Encinitas Barber Shop",
+      "google_maps_url": "https://www.google.com/maps/place/Encinitas+Barber+Shop",
+      "neighborhood": "Encinitas, CA",
+      "address": null,
+      "phone": null,
+      "website": null,
+      "notes": "Long-running traditional shop in downtown Encinitas. Three-generation operation per local lore. First demo build."
+    },
+    {
+      "slug": "santa-fe-barber-shop",
+      "template": "barbershop",
+      "google_business_name": "Santa Fe Barber Shop",
+      "google_maps_url": "https://www.google.com/maps/place/Santa+Fe+Barber+Shop",
+      "neighborhood": "Encinitas / Cardiff, CA",
+      "address": null,
+      "phone": null,
+      "website": null,
+      "notes": "Classic walk-in shop. Confirm address before researching."
+    },
+    {
+      "slug": "el-camino-barbers",
+      "template": "barbershop",
+      "google_business_name": "Thy Neighbor Barber Lounge",
+      "google_maps_url": "https://www.google.com/maps/place/Thy+Neighbor+Barber+Lounge",
+      "neighborhood": "Encinitas / Carlsbad, CA",
+      "address": null,
+      "phone": null,
+      "website": null,
+      "notes": "Resolves to Thy Neighbor Barber Lounge in initial Google search. Possibly the same business as #11 (el-camino-barber-shop). Confirm before researching either."
+    },
+    {
+      "slug": "california-cuts",
+      "template": "barbershop",
+      "google_business_name": "California Cuts",
+      "google_maps_url": "https://www.google.com/maps/place/California+Cuts",
+      "neighborhood": "North County San Diego",
+      "address": null,
+      "phone": null,
+      "website": null,
+      "notes": "Common name — verify location before pulling reviews."
+    },
+    {
+      "slug": "south-carlsbad-salon",
+      "template": "barbershop",
+      "google_business_name": "South Carlsbad Salon",
+      "google_maps_url": "https://www.google.com/maps/place/South+Carlsbad+Salon",
+      "neighborhood": "Carlsbad, CA",
+      "address": null,
+      "phone": null,
+      "website": null,
+      "notes": "May serve mixed clientele (cuts + color). Confirm whether to lean barbershop or salon framing."
+    },
+    {
+      "slug": "golden-boy-barber-shop",
+      "template": "barbershop",
+      "google_business_name": "Golden Boy Barber Shop",
+      "google_maps_url": "https://www.google.com/maps/place/Golden+Boy+Barber+Shop",
+      "neighborhood": "Encinitas / Cardiff, CA",
+      "address": null,
+      "phone": null,
+      "website": null,
+      "notes": "Owner and shop both repeatedly named in local 'best of' lists. Known for fades + classic cuts."
+    },
+    {
+      "slug": "vs-barbershop",
+      "template": "barbershop",
+      "google_business_name": "V's Barbershop",
+      "google_maps_url": "https://www.google.com/maps/place/V%27s+Barbershop",
+      "neighborhood": "Carlsbad / Encinitas, CA",
+      "address": null,
+      "phone": null,
+      "website": "https://vbarbershop.com/",
+      "notes": "Franchise. Check whether Joe is pitching the local franchisee or the corporate entity before doing custom work."
+    },
+    {
+      "slug": "good-company",
+      "template": "barbershop",
+      "google_business_name": "Good Company Barbers",
+      "google_maps_url": "https://www.google.com/maps/place/Good+Company+Barbers",
+      "neighborhood": "Encinitas, CA",
+      "address": null,
+      "phone": null,
+      "website": null,
+      "notes": "Mooch and Keagan are real names that appear in reviews. Tight crew, modern but not 'tech bro'."
+    },
+    {
+      "slug": "bravehold",
+      "template": "barbershop",
+      "google_business_name": "Bravehold",
+      "google_maps_url": "https://www.google.com/maps/place/Bravehold",
+      "neighborhood": "North County San Diego",
+      "address": null,
+      "phone": null,
+      "website": null,
+      "notes": "Distinct, design-forward branding likely. Verify exact location."
+    },
+    {
+      "slug": "omearas-barber-shop",
+      "template": "barbershop",
+      "google_business_name": "O'Meara's Barber Shop",
+      "google_maps_url": "https://www.google.com/maps/place/O%27Meara%27s+Barber+Shop",
+      "neighborhood": "North County San Diego",
+      "address": null,
+      "phone": null,
+      "website": null,
+      "notes": "Family name — likely traditional, generational. Lean into that in the design direction."
+    },
+    {
+      "slug": "happy-tails-pet-salon",
+      "template": "pet-grooming",
+      "google_business_name": "Happy Tails Pet Salon",
+      "google_maps_url": "https://www.google.com/maps/place/Happy+Tails+Pet+Salon",
+      "neighborhood": "North County San Diego",
+      "address": null,
+      "phone": null,
+      "website": null,
+      "notes": "Common name — verify exact location."
+    },
+    {
+      "slug": "the-grateful-dog",
+      "template": "pet-grooming",
+      "google_business_name": "The Grateful Dog",
+      "google_maps_url": "https://www.google.com/maps/place/The+Grateful+Dog",
+      "neighborhood": "Encinitas / Leucadia, CA",
+      "address": null,
+      "phone": null,
+      "website": null,
+      "notes": "Name suggests Deadhead/coastal vibe — not the default warm-cream palette. Worth a custom palette move."
+    },
+    {
+      "slug": "posh-pets",
+      "template": "pet-grooming",
+      "google_business_name": "Posh Pets",
+      "google_maps_url": "https://www.google.com/maps/place/Posh+Pets",
+      "neighborhood": "North County San Diego",
+      "address": null,
+      "phone": null,
+      "website": null,
+      "notes": "May already have a Joe-built site. Confirm whether to import existing assets or build fresh."
+    },
+    {
+      "slug": "paw-purrfection",
+      "template": "pet-grooming",
+      "google_business_name": "Paw Purrfection",
+      "google_maps_url": "https://www.google.com/maps/place/Paw+Purrfection",
+      "neighborhood": "North County San Diego",
+      "address": null,
+      "phone": null,
+      "website": null,
+      "notes": "Recently relocated — verify current address before pulling map embed."
+    },
+    {
+      "slug": "fritzys-pet-care",
+      "template": "pet-grooming",
+      "google_business_name": "Fritzy's Pet Care",
+      "google_maps_url": "https://www.google.com/maps/place/Fritzy%27s+Pet+Care",
+      "neighborhood": "North County San Diego",
+      "address": null,
+      "phone": null,
+      "website": null,
+      "notes": "Toll-free number suggests mobile/in-home service rather than a fixed salon. Confirm framing before designing — may need to pull the map iframe and lean into 'we come to you'."
+    },
+    {
+      "slug": "earthwise-pet",
+      "template": "pet-grooming",
+      "google_business_name": "EarthWise Pet",
+      "google_maps_url": "https://www.google.com/maps/place/EarthWise+Pet",
+      "neighborhood": "North County San Diego",
+      "address": null,
+      "phone": null,
+      "website": "https://earthwisepetsupply.com/",
+      "notes": "Franchise. Confirm whether pitching the local franchisee directly."
+    },
+    {
+      "slug": "muse-dog-spa",
+      "template": "pet-grooming",
+      "google_business_name": "Muse Dog Spa",
+      "google_maps_url": "https://www.google.com/maps/place/Muse+Dog+Spa",
+      "neighborhood": "North County San Diego",
+      "address": null,
+      "phone": null,
+      "website": null,
+      "notes": "Name suggests upscale/spa positioning — palette and typography should sit a notch more refined than the default."
+    },
+    {
+      "slug": "le-plumbing-encinitas",
+      "template": "plumber",
+      "google_business_name": "Le Plumbing Encinitas",
+      "google_maps_url": "https://www.google.com/maps/place/Le+Plumbing+Encinitas",
+      "neighborhood": "Encinitas, CA",
+      "address": null,
+      "phone": null,
+      "website": null,
+      "license_number": null,
+      "notes": "Reviews look templated — flag for verification before publishing. Look up CSLB # at cslb.ca.gov before any build. Second demo build."
+    }
+  ]
+}

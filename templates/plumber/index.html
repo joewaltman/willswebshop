@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{BUSINESS_NAME}} — {{TAGLINE}}</title>
+  <meta name="description" content="{{BUSINESS_NAME}} — {{TAGLINE}}. Licensed, insured, family-owned plumbers serving North County San Diego.">
+  <link rel="icon" href="/shared/favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{BUSINESS_NAME}}">
+  <meta property="og:description" content="{{TAGLINE}}">
+  <meta property="og:image" content="images/og.jpg">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Sticky emergency banner — pure CSS, no JS. -->
+  <a class="emergency" href="tel:{{PHONE_TEL}}" aria-label="Call now for 24-hour emergency plumbing: {{PHONE}}">
+    <span class="emergency__label">24-HR EMERGENCY</span>
+    <span class="emergency__num">{{PHONE}}</span>
+    <span class="emergency__chev" aria-hidden="true">→</span>
+  </a>
+
+  <header class="topbar" role="banner">
+    <a class="brand" href="/">
+      <span class="brand__icon" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="26" height="26">
+          <path d="M6 6h6v6H8v8a4 4 0 0 0 4 4h4v-4h6v8h-6v-2a8 8 0 0 1-8-8V12H6V6z" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="brand__text">{{BUSINESS_NAME}}</span>
+    </a>
+    <nav class="topnav" aria-label="primary">
+      <a href="#services">Services</a>
+      <a href="#area">Service area</a>
+      <a href="#why">Why us</a>
+      <a href="#reviews">Reviews</a>
+    </nav>
+    <a class="btn btn--call" href="tel:{{PHONE_TEL}}" aria-label="Call {{PHONE}}">
+      <span aria-hidden="true">☎</span> Call now
+    </a>
+  </header>
+
+  <main>
+
+    <section class="hero" aria-label="Welcome">
+      <div class="hero__inner">
+        <p class="kicker">Licensed · Insured · Family-owned</p>
+        <h1 class="hero__h1">When the water won't stop, <span class="hero__accent">we will.</span></h1>
+        <p class="hero__lead">{{TAGLINE}}</p>
+        <ul class="hero__list" aria-label="Service highlights">
+          <li>Same-day service across North County San Diego</li>
+          <li>24-hour emergency line, real humans answering</li>
+          <li>Up-front pricing — no surprise charges</li>
+          <li>Fully licensed (CSLB #{{LICENSE_NUMBER}}) and insured</li>
+        </ul>
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--big" href="tel:{{PHONE_TEL}}">
+            <span class="btn__small">Call now</span>
+            <span class="btn__big">{{PHONE}}</span>
+          </a>
+          <a class="btn btn--ghost" href="#services">See services</a>
+        </div>
+      </div>
+      <div class="hero__stripe" aria-hidden="true"></div>
+    </section>
+
+    <section id="services" class="services" aria-labelledby="services-h">
+      <header class="section-head">
+        <p class="kicker">What we fix</p>
+        <h2 id="services-h" class="section-h">Services</h2>
+      </header>
+      <div class="services__grid">
+        <article class="svc">
+          <div class="svc__num">01</div>
+          <h3>Residential plumbing</h3>
+          <p>Faucets, toilets, garbage disposals, fixture installs, leak detection, slab leak repair.</p>
+        </article>
+        <article class="svc">
+          <div class="svc__num">02</div>
+          <h3>Commercial plumbing</h3>
+          <p>Restaurants, retail, multi-unit. Backflow testing, grease traps, scheduled maintenance.</p>
+        </article>
+        <article class="svc">
+          <div class="svc__num">03</div>
+          <h3>24-hour emergency</h3>
+          <p>Burst pipes, sewage backups, no-hot-water at 2am. We answer when others don't.</p>
+        </article>
+        <article class="svc">
+          <div class="svc__num">04</div>
+          <h3>Drain &amp; sewer</h3>
+          <p>Hydro-jetting, snake/auger, video camera inspection, root removal, trenchless options.</p>
+        </article>
+        <article class="svc">
+          <div class="svc__num">05</div>
+          <h3>Water heaters</h3>
+          <p>Tank, tankless, hybrid heat-pump. Repair, replacement, gas &amp; electric, anode service.</p>
+        </article>
+        <article class="svc">
+          <div class="svc__num">06</div>
+          <h3>Repipe &amp; remodel</h3>
+          <p>Whole-home repipes (PEX or copper), kitchen &amp; bath remodels, new construction rough-in.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="area" class="area" aria-labelledby="area-h">
+      <div class="area__grid">
+        <div class="area__copy">
+          <p class="kicker">Where we work</p>
+          <h2 id="area-h" class="section-h">Service area</h2>
+          <p>Based in {{ADDRESS}}. We cover Encinitas, Cardiff, Leucadia, Carlsbad, Solana Beach, Del Mar, Rancho Santa Fe, Oceanside, Vista, San Marcos, Escondido, and surrounding North County communities.</p>
+          <p>Outside that footprint? Call anyway — we'll tell you straight if we're the right fit.</p>
+          <a class="btn btn--primary" href="tel:{{PHONE_TEL}}">Call {{PHONE}}</a>
+        </div>
+        <div class="area__map">
+          <iframe
+            src="{{MAP_EMBED_URL}}"
+            title="Service area map for {{BUSINESS_NAME}}"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="why" class="why" aria-labelledby="why-h">
+      <header class="section-head">
+        <p class="kicker">Why us</p>
+        <h2 id="why-h" class="section-h">No surprises. Period.</h2>
+      </header>
+      <ul class="why__grid">
+        <li>
+          <div class="why__big">CSLB</div>
+          <p>Licensed contractor #<strong>{{LICENSE_NUMBER}}</strong> — verify at cslb.ca.gov.</p>
+        </li>
+        <li>
+          <div class="why__big">Insured</div>
+          <p>$1M general liability + workers' comp on every job.</p>
+        </li>
+        <li>
+          <div class="why__big">Local</div>
+          <p>Family-owned. Trucks based in North County, never sub-contracted.</p>
+        </li>
+        <li>
+          <div class="why__big">Up-front</div>
+          <p>Flat-rate pricing approved before we touch a wrench.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="reviews" class="reviews" aria-labelledby="reviews-h">
+      <header class="section-head">
+        <p class="kicker">From our neighbors</p>
+        <h2 id="reviews-h" class="section-h">What folks say</h2>
+      </header>
+      <div class="reviews__grid">
+        {{REVIEW_BLOCK}}
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot" role="contentinfo">
+    <div class="foot__inner">
+      <div class="foot__name">{{BUSINESS_NAME}}</div>
+      <a class="foot__phone" href="tel:{{PHONE_TEL}}" aria-label="Call {{PHONE}}">{{PHONE}}</a>
+      <address class="foot__addr">{{ADDRESS}}</address>
+      <div class="foot__hours">
+        {{HOURS_TABLE}}
+      </div>
+      <p class="foot__lic">California Contractors State License Board #{{LICENSE_NUMBER}} · Licensed &amp; insured</p>
+      <p class="foot__copy">© <span id="yr"></span> {{BUSINESS_NAME}}. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

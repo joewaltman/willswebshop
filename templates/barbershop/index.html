@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{BUSINESS_NAME}} — {{TAGLINE}}</title>
+  <meta name="description" content="{{BUSINESS_NAME}} — {{TAGLINE}}">
+  <link rel="icon" href="/shared/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{BUSINESS_NAME}}">
+  <meta property="og:description" content="{{TAGLINE}}">
+  <meta property="og:image" content="images/og.jpg">
+
+  <!-- Self-hosted display via Google Fonts (swap into /shared/fonts/ for self-host) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="masthead" role="banner">
+    <div class="masthead__inner">
+      <div class="brand">
+        <span class="brand__est">Est.</span>
+        <span class="brand__year">—</span>
+        <h1 class="brand__name">{{BUSINESS_NAME}}</h1>
+        <p class="brand__tag">{{TAGLINE}}</p>
+      </div>
+      <nav class="topnav" aria-label="primary">
+        <a href="#services">Services</a>
+        <a href="#barbers">Barbers</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#visit">Visit</a>
+      </nav>
+      <a class="cta" href="{{BOOKING_URL}}" rel="noopener">Book a chair</a>
+    </div>
+    <div class="rule rule--double" aria-hidden="true"></div>
+  </header>
+
+  <main>
+
+    <section class="hero" aria-label="Welcome">
+      <div class="hero__copy">
+        <p class="kicker">— A traditional barbershop —</p>
+        <h2 class="hero__headline">Sharp cuts.<br>Hot lather.<br>No fuss.</h2>
+        <p class="hero__lead">{{TAGLINE}}</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="{{BOOKING_URL}}" rel="noopener">Book online</a>
+          <a class="btn btn--ghost" href="tel:{{PHONE_TEL}}" aria-label="Call {{BUSINESS_NAME}} at {{PHONE}}">{{PHONE}}</a>
+        </div>
+      </div>
+      <div class="hero__mark" aria-hidden="true">
+        <div class="hero__mark-inner">
+          <span class="hero__mark-line">— since —</span>
+          <span class="hero__mark-big">★</span>
+          <span class="hero__mark-line">— shave & cut —</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="rule" aria-hidden="true"></div>
+
+    <section id="services" class="services" aria-labelledby="services-h">
+      <header class="section-head">
+        <p class="kicker">— I —</p>
+        <h2 id="services-h" class="section-h">Services &amp; prices</h2>
+      </header>
+      <div class="services__table">
+        {{SERVICES_BLOCK}}
+      </div>
+      <p class="services__note">Walk-ins welcome, appointments preferred. Cash &amp; card.</p>
+    </section>
+
+    <div class="rule" aria-hidden="true"></div>
+
+    <section id="barbers" class="barbers" aria-labelledby="barbers-h">
+      <header class="section-head">
+        <p class="kicker">— II —</p>
+        <h2 id="barbers-h" class="section-h">Meet the barbers</h2>
+      </header>
+      <div class="barbers__grid">
+        {{STAFF_BLOCK}}
+      </div>
+    </section>
+
+    <div class="rule" aria-hidden="true"></div>
+
+    <section id="gallery" class="gallery" aria-labelledby="gallery-h">
+      <header class="section-head">
+        <p class="kicker">— III —</p>
+        <h2 id="gallery-h" class="section-h">The shop</h2>
+      </header>
+      <div class="gallery__grid">
+        <figure><img src="images/shop-1.jpg" alt="Inside the shop, chairs and mirrors" loading="lazy" width="800" height="600"></figure>
+        <figure><img src="images/shop-2.jpg" alt="A finished cut" loading="lazy" width="800" height="600"></figure>
+        <figure><img src="images/shop-3.jpg" alt="Hot lather and straight razor on the stand" loading="lazy" width="800" height="600"></figure>
+        <figure><img src="images/shop-4.jpg" alt="Clippers, combs, and brushes laid out" loading="lazy" width="800" height="600"></figure>
+        <figure><img src="images/shop-5.jpg" alt="A barber giving a fade" loading="lazy" width="800" height="600"></figure>
+        <figure><img src="images/shop-6.jpg" alt="Storefront from the street" loading="lazy" width="800" height="600"></figure>
+      </div>
+    </section>
+
+    <div class="rule" aria-hidden="true"></div>
+
+    <section id="visit" class="visit" aria-labelledby="visit-h">
+      <header class="section-head">
+        <p class="kicker">— IV —</p>
+        <h2 id="visit-h" class="section-h">Visit</h2>
+      </header>
+      <div class="visit__grid">
+        <div class="visit__col">
+          <h3 class="visit__sub">Hours</h3>
+          <div class="hours">
+            {{HOURS_TABLE}}
+          </div>
+          <h3 class="visit__sub">Find us</h3>
+          <address>
+            {{ADDRESS}}<br>
+            <a href="tel:{{PHONE_TEL}}">{{PHONE}}</a>
+          </address>
+          <p class="visit__social">
+            <a href="{{INSTAGRAM_URL}}" rel="noopener" aria-label="Instagram">Instagram</a>
+            <span aria-hidden="true">·</span>
+            <a href="{{FACEBOOK_URL}}" rel="noopener" aria-label="Facebook">Facebook</a>
+          </p>
+        </div>
+        <div class="visit__map">
+          <iframe
+            src="{{MAP_EMBED_URL}}"
+            title="Map to {{BUSINESS_NAME}}"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot" role="contentinfo">
+    <div class="rule rule--double" aria-hidden="true"></div>
+    <div class="foot__inner">
+      <p class="foot__name">{{BUSINESS_NAME}}</p>
+      <p class="foot__small">{{ADDRESS}} · <a href="tel:{{PHONE_TEL}}">{{PHONE}}</a></p>
+      <p class="foot__copy">© <span id="yr"></span> {{BUSINESS_NAME}}. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
