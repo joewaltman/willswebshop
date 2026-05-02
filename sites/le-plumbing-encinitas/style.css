@@ -458,10 +458,9 @@ a:hover { color: var(--color-accent); }
 .foot__copy { margin: 0; opacity: 0.55; font-size: 0.85rem; }
 
 /* =========================================================
-   Site-specific overrides — Le Plumbing Encinitas (DRAFT).
-   - Yellow draft banner at top of page (above sticky banner).
+   Site-specific overrides — Le Plumbing Encinitas.
    - Punchier orange + deeper near-black palette.
-   - Dashed-outlined placeholder review cards.
+   - Single Google trust-badge replaces the review cards grid.
    - Slightly amped pulse animation on the call button.
    ========================================================= */
 
@@ -470,38 +469,41 @@ a:hover { color: var(--color-accent); }
   --color-text:     #0e1014;   /* deeper near-black */
 }
 
-/* DRAFT banner — caution-tape yellow, full-bleed, sits above sticky banner */
-.draft-banner {
-  background: #ffd60a;
-  color: #1a1a1a;
+/* Google trust badge (replaces .reviews__grid) */
+.reviews__badge {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 28px;
   text-align: center;
-  padding: 10px 16px;
+}
+.reviews__stars {
+  color: var(--color-primary);
+  letter-spacing: 0.18em;
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  margin: 0 0 8px;
+  line-height: 1;
+}
+.reviews__rating {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
-  border-bottom: 3px solid #1a1a1a;
+  font-size: 1.4rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 4px;
 }
-.draft-banner strong {
-  background: #1a1a1a;
-  color: #ffd60a;
-  padding: 2px 8px;
+.reviews__rating strong {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--color-primary);
   margin-right: 6px;
-  letter-spacing: 0.12em;
 }
-
-/* Placeholder review cards — dashed outline, muted */
-.review--placeholder {
-  border: 2px dashed rgba(0,0,0,0.25) !important;
-  background: rgba(255,214,10,0.06);
-}
-.review--placeholder .review__body {
-  font-style: italic;
-  opacity: 0.8;
-}
-.review--placeholder .review__name {
-  font-style: italic;
-  opacity: 0.6;
+.reviews__count {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin: 0;
 }
 
 /* Slightly faster, more visible call-button pulse */
