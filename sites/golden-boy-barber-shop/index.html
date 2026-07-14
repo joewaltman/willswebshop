@@ -3,10 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Golden Boy Barber Shop — Carlsbad</title>
-  <meta name="description" content="Golden Boy Barber Shop in Carlsbad, CA. Fades, classic cuts, beard trims.">
+  <title>Golden Boy Barber Shop — Carlsbad · Fades, classic cuts, open late</title>
+  <meta name="description" content="Modern barbershop at 2525 El Camino Real, Carlsbad. Fades, classic cuts, beard trims, kids' cuts. Walk-ins welcome. Open late, open Sundays. Call (619) 871-1915.">
   <meta name="robots" content="noindex">
   <link rel="icon" href="/shared/favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Golden Boy Barber Shop — Carlsbad">
+  <meta property="og:description" content="Modern Carlsbad barbershop. Fades, classic cuts, beard trims. Open late, open Sundays.">
+  <meta property="og:image" content="images/og.jpg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Roboto+Slab:wght@500;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -19,10 +25,11 @@
       <div class="brand">
         <span class="brand__est">— Carlsbad, CA —</span>
         <h1 class="brand__name">Golden Boy Barber Shop</h1>
-        <p class="brand__tag">Fades, classic cuts, late nights.</p>
+        <p class="brand__tag">Modern cuts, open late, walk-ins welcome.</p>
       </div>
       <nav class="topnav" aria-label="primary">
         <a href="#services">Services</a>
+        <a href="#barbers">Barbers</a>
         <a href="#visit">Visit</a>
       </nav>
       <a class="cta" href="tel:+16198711915" aria-label="Call (619) 871-1915">(619) 871-1915</a>
@@ -57,7 +64,12 @@
       <header class="section-head"><p class="kicker">— I —</p><h2 id="services-h" class="section-h">Services</h2></header>
       <div class="services__table">
         <div class="row"><span class="row__name">Men's haircut</span><span class="row__dots"></span><span class="row__price">Call</span></div>
-        <div class="row"><span class="row__name">Fade</span><span class="row__dots"></span><span class="row__price">Call</span></div>
+        <div class="row">
+          <span class="row__name">Fade</span>
+          <span class="row__dots"></span>
+          <span class="row__price">Call</span>
+          <p class="row__desc">Skin, low, mid, high — bald fades a specialty.</p>
+        </div>
         <div class="row"><span class="row__name">Beard trim</span><span class="row__dots"></span><span class="row__price">Call</span></div>
         <div class="row"><span class="row__name">Kids' cut</span><span class="row__dots"></span><span class="row__price">Call</span></div>
       </div>
@@ -66,8 +78,36 @@
 
     <div class="rule" aria-hidden="true"></div>
 
+    <section id="barbers" class="barbers" aria-labelledby="barbers-h">
+      <header class="section-head"><p class="kicker">— II —</p><h2 id="barbers-h" class="section-h">Behind the chairs</h2></header>
+      <div class="barbers__grid barbers__grid--two">
+        <article class="barber">
+          <div class="barber__monogram" aria-hidden="true">GB</div>
+          <h3>The crew</h3>
+          <p class="barber__role">Barbers · Walk-in friendly</p>
+          <p>Walk in and meet the barber taking the next chair. Ask for a fade, a classic cut, or a beard cleanup — everyone's up for all of it.</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="rule" aria-hidden="true"></div>
+
+    <section id="gallery" class="gallery" aria-labelledby="gallery-h">
+      <header class="section-head"><p class="kicker">— III —</p><h2 id="gallery-h" class="section-h">Inside the shop</h2></header>
+      <div class="gallery__grid">
+        <figure><img src="images/shop-1.jpg" alt="Golden Boy Barber Shop interior" loading="lazy" width="800" height="600"></figure>
+        <figure><img src="images/shop-2.jpg" alt="Barber chair at Golden Boy" loading="lazy" width="800" height="600"></figure>
+        <figure><img src="images/shop-3.jpg" alt="Fade in progress at Golden Boy" loading="lazy" width="800" height="600"></figure>
+        <figure><img src="images/shop-4.jpg" alt="Golden Boy storefront on El Camino Real" loading="lazy" width="800" height="600"></figure>
+        <figure><img src="images/shop-5.jpg" alt="Beard trim detail" loading="lazy" width="800" height="600"></figure>
+        <figure><img src="images/shop-6.jpg" alt="Waiting area at Golden Boy" loading="lazy" width="800" height="600"></figure>
+      </div>
+    </section>
+
+    <div class="rule" aria-hidden="true"></div>
+
     <section id="visit" class="visit" aria-labelledby="visit-h">
-      <header class="section-head"><p class="kicker">— II —</p><h2 id="visit-h" class="section-h">Visit</h2></header>
+      <header class="section-head"><p class="kicker">— IV —</p><h2 id="visit-h" class="section-h">Visit</h2></header>
       <div class="visit__grid">
         <div class="visit__col">
           <h3 class="visit__sub">Hours</h3>
@@ -85,6 +125,9 @@
             Carlsbad, CA 92008<br>
             <a href="tel:+16198711915">(619) 871-1915</a>
           </address>
+          <p class="visit__social">
+            <a href="https://instagram.com/goldenboy_barbershop_" rel="noopener">Instagram</a>
+          </p>
         </div>
         <div class="visit__map">
           <iframe
