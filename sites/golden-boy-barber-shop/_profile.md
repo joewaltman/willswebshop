@@ -19,13 +19,13 @@ Modern · open-late · weekend-friendly · mall-adjacent
 ## Resolved
 
 - **2026-07-14:** clients.json entry updated to Carlsbad; only one Golden Boy in the area (confirmed with Joe).
-- **2026-07-14:** OG meta tags added, Barbers + Gallery sections added, Instagram linked. Gallery uses placeholder `images/shop-N.jpg` paths — real photos pending from Joe.
+- **2026-07-14:** OG meta tags added, Barbers section added, Instagram linked. Gallery section considered and removed — didn't fit this shop's positioning.
 
 ## Open questions for Joe
 
 1. Confirm staff names — couldn't find them in research. Currently rendered as a single "The crew" card.
 2. Reviews not paraphrased yet. Low-priority — barbershop template has no reviews section by default.
-3. Client photos: 6 gallery images (`images/shop-1.jpg` … `shop-6.jpg`) and `images/og.jpg` (1200×630) still needed.
+3. `images/og.jpg` (1200×630 social card) still needed.
 
 ## Visual direction
 
