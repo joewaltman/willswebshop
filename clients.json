@@ -189,6 +189,17 @@
       "notes": "Name suggests upscale/spa positioning — palette and typography should sit a notch more refined than the default."
     },
     {
+      "slug": "heavenly-nails-spa",
+      "template": null,
+      "google_business_name": "Heavenly Nails Spa",
+      "google_maps_url": "https://www.google.com/maps/place/Heavenly+Nails+Spa",
+      "neighborhood": "Encinitas, CA",
+      "address": "937 S Coast Hwy 101, Suite C-107, Encinitas, CA 92024",
+      "phone": "(760) 634-2666",
+      "website": "https://heavenlynail101.net",
+      "notes": "Family-owned nail spa since 1996. Owners Lee & Teresa. 215+ Google reviews, 225 Yelp. Current site heavenlynail101.net is one line of text — this demo is the pitch to replace it. Custom build (no shared nail-salon template). Verified 2026-07-14."
+    },
+    {
       "slug": "le-plumbing-encinitas",
       "template": "plumber",
       "google_business_name": "Le Plumbing Encinitas",
